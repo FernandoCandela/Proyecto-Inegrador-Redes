@@ -9,6 +9,8 @@ Para abrir el proyecto utilizamos el IDE NetBeans con Java v8, existen dos forma
 
 Para ejecutar la aplicación dirigirse a la clase “main”, darle click derecho y darle a la opción “Run File”.
 
+Explicación del Proyecto: 
+
 El programa cuenta con dos clases:
 
 El primero llamado "GrafoMatriz" el cual contiene toda la lógica del programa y el algoritmo de Dijkstra, el segundo llamado "main", donde se realizará los llamados a las funciones de la clase GrafoMatriz, en este caso ya cuenta con las 3 topologías de prueba ingresadas predeterminadamente
