@@ -9,21 +9,17 @@ public class GrafoMatriz {
     //Maximo numero de vertices del grafo
     int maxVertices;
     //Matriz de adyacencia con Clase Float - Null significa que no hay arco
-    Float[][] matriz;
-    //dirigido o no
-    boolean dirigido;
-
+    Float[][] matrizAdy;
     //alamcenara un arreglo con los previos saltos de cada vertice
     int[] saltoPrev;
 
     //variable temporal que alamacenara una lista cono los indices del recorrido recorrido mas corto
     ArrayList listSaltos = new ArrayList();
 
-    public GrafoMatriz(int n, int max, boolean d) {
+    public GrafoMatriz(int n, int max) {
         maxVertices = max;
         numVertices = n;
-        matriz = new Float[maxVertices][maxVertices];
-        dirigido = d;
+        matrizAdy = new Float[maxVertices][maxVertices];
         saltoPrev = new int[maxVertices];
     }
 
@@ -42,20 +38,15 @@ public class GrafoMatriz {
     }
 
     public void agregarArco(int i, int j, float w) {
-        matriz[i][j] = w;
-        //si el grafo es no dirigido debemos agregar también el arco simetrico
-        if (!dirigido) {
-            matriz[j][i] = w;
-        }
+        matrizAdy[i][j] = w;
+        matrizAdy[j][i] = w;
+       
     }
 
     public void eliminarArco(int i, int j) {
         //Actualizar el valor a null
-        matriz[i][j] = null;
-        //Si es un grafo no dirijido, debemos actualizar el simetrico
-        if (!dirigido) {
-            matriz[j][i] = null;
-        }
+        matrizAdy[i][j] = null;
+        matrizAdy[j][i] = null;
     }
 
     public void mostrarGrafo() {
@@ -64,9 +55,9 @@ public class GrafoMatriz {
             //Para cada fila, visitar todas la columnas
             for (int j = 0; j < numVertices; j++) {
                 //Imprimir el elemento en la matriz[i,j] y un tab
-                System.out.print(matriz[i][j] + "\t");
+                System.out.print(matrizAdy[i][j] + "\t");
             }
-            //Nuev linea para una nueva fila
+            //Nueva linea para una nueva fila
             System.out.println();
         }
         System.out.println();
@@ -139,7 +130,7 @@ public class GrafoMatriz {
         distancias[verticeFuente] = 0;
 
         // Encontrar el camino mas corto para todos los vertices 
-        for (int contador = 0; contador < numVertices - 1; contador++) {
+        for (int i = 0; i < numVertices - 1; i++) {
             //el vertice con la minima distancia del conjunto de vertices que todavia no hayan sido visitado 
             // w es siempre igual al vertice fuente al inicio de la iteracion 
             int w = distanciaMinima(distancias, conjuntoS);
@@ -153,11 +144,11 @@ public class GrafoMatriz {
                 // arco de w a v, y peso total de la ruta del vertice fuente a
                 // v a través de w es menor que el valor actual de distancias [v]  
 
-                if (!conjuntoS[v] && matriz[w][v] != null
+                if (!conjuntoS[v] && matrizAdy[w][v] != null
                         && distancias[w] != Float.MAX_VALUE
-                        && distancias[w] + matriz[w][v] < distancias[v]) {
+                        && distancias[w] + matrizAdy[w][v] < distancias[v]) {
 
-                    distancias[v] = distancias[w] + matriz[w][v];
+                    distancias[v] = distancias[w] + matrizAdy[w][v];
                     previo[v] = w;
                 }
             }

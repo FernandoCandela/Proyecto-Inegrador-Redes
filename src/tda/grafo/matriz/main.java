@@ -5,7 +5,7 @@ public class main {
     public static void main(String args[]) {
 
         System.out.println("************Topologia 1*********** ");
-        GrafoMatriz top1 = new GrafoMatriz(5, 5, false);
+        GrafoMatriz top1 = new GrafoMatriz(5, 5);
         top1.agregarArco(0, 1, 10);
         top1.agregarArco(0, 3, 30);
         top1.agregarArco(0, 4, 100);
@@ -21,7 +21,7 @@ public class main {
         top1.dijkstra(0);
 
         System.out.println("************Topologia 2*********** ");
-        GrafoMatriz top2 = new GrafoMatriz(8, 8, false);
+        GrafoMatriz top2 = new GrafoMatriz(8, 8);
         top2.agregarArco(0, 1, 12);
         top2.agregarArco(0, 2, 10);
         top2.agregarArco(0, 3, 6);
@@ -45,7 +45,7 @@ public class main {
         top2.dijkstra(0);
 
         System.out.println("************Topologia 3*********** ");
-        GrafoMatriz top3 = new GrafoMatriz(11, 11, false);
+        GrafoMatriz top3 = new GrafoMatriz(11, 11);
         top3.agregarArco(0, 1, 8);
         top3.agregarArco(0, 2, 17);
         top3.agregarArco(0, 3, 15);
