@@ -151,7 +151,7 @@ public class GrafoMatriz {
                     distancias[v] = distancias[w] + matrizAdy[w][v];
                     previo[v] = w;
                 }
-            }
+            } 
         }
         //guardar los vertices previos de cada vertice en la variable global
         saltoPrev = previo;
