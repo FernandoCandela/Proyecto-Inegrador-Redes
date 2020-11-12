@@ -40,7 +40,7 @@ public class GrafoMatriz {
     public void agregarArco(int i, int j, float w) {
         matrizAdy[i][j] = w;
         matrizAdy[j][i] = w;
-       
+
     }
 
     public void eliminarArco(int i, int j) {
@@ -50,9 +50,9 @@ public class GrafoMatriz {
     }
 
     public void mostrarGrafo() {
-        //visitar las filas
+        //recorrer las filas
         for (int i = 0; i < numVertices; i++) {
-            //Para cada fila, visitar todas la columnas
+            //Para cada fila, recorrer todas la columnas
             for (int j = 0; j < numVertices; j++) {
                 //Imprimir el elemento en la matriz[i,j] y un tab
                 System.out.print(matrizAdy[i][j] + "\t");
@@ -78,7 +78,7 @@ public class GrafoMatriz {
         return min_index;
     }
 
-    // Mostrar arreglo de ditancias minimas
+    // imprime la tabla de ruteo 
     public void imprimirTablaRuteo(float distancias[], int sigSalto[]) {
         System.out.println("****** Tabla de Ruteo ******");
         System.out.println("Router\tDistancia\tSiguiente Salto");
@@ -95,7 +95,7 @@ public class GrafoMatriz {
         }
 
     }
-    
+
     //inserta a listSaltos los vertices del recorrido mas corto hacia el vertice destino 
     void recorridoMasCorto(int vertice) {
         if (saltoPrev[vertice] != -1) //si hay vertice previo
@@ -141,7 +141,7 @@ public class GrafoMatriz {
             // Actualiza el valor de la distacia de los vértices adyacentes del vértice seleccionado
             for (int v = 0; v < numVertices; v++) {
                 // Actualizar distancias [v] solo si no fue visitado, hay un
-                // arco de w a v, y peso total de la ruta del vertice fuente a
+                // enlace de w a v, y peso total de la ruta del vertice fuente a
                 // v a través de w es menor que el valor actual de distancias [v]  
 
                 if (!conjuntoS[v] && matrizAdy[w][v] != null
@@ -151,7 +151,7 @@ public class GrafoMatriz {
                     distancias[v] = distancias[w] + matrizAdy[w][v];
                     previo[v] = w;
                 }
-            } 
+            }
         }
         //guardar los vertices previos de cada vertice en la variable global
         saltoPrev = previo;
