@@ -19,6 +19,7 @@ public class main {
 
         top1.mostrarGrafo();
         top1.dijkstra(0);
+        System.out.println("");
 
         System.out.println("************Topologia 2*********** ");
         GrafoMatriz top2 = new GrafoMatriz(8, 8);
@@ -42,8 +43,9 @@ public class main {
         top2.agregarArco(6, 7, 3);
 
         top2.mostrarGrafo();
-        top2.dijkstra(0);
-
+        top2.dijkstra(5);
+        System.out.println("");
+ 
         System.out.println("************Topologia 3*********** ");
         GrafoMatriz top3 = new GrafoMatriz(11, 11);
         top3.agregarArco(0, 1, 8);
@@ -70,7 +72,8 @@ public class main {
         top3.agregarArco(9, 10, 20);
 
         top3.mostrarGrafo();
-        top3.dijkstra(0);
+        top3.dijkstra(6);
+        System.out.println("");
 
     }
 

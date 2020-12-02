@@ -28,13 +28,8 @@ public class GrafoMatriz {
             System.out.println("No es posible agregar vertice!!!");
             return;
         }
-        //Ingrementar el numero de vertices
+        //Incrementar el numero de vertices
         numVertices++;
-    }
-
-    public void agregarArco(int i, int j) {
-        //Por defecto, el arco es añadido con peso cero
-        agregarArco(i, j, 0);
     }
 
     public void agregarArco(int i, int j, float w) {
@@ -52,9 +47,9 @@ public class GrafoMatriz {
     public void mostrarGrafo() {
         //recorrer las filas
         for (int i = 0; i < numVertices; i++) {
-            //Para cada fila, recorrer todas la columnas
+            //Para cada fila, recorrer todas las columnas
             for (int j = 0; j < numVertices; j++) {
-                //Imprimir el elemento en la matriz[i,j] y un tab
+                //Imprimir el elemento en la matrizAdy[i,j] y un tab
                 System.out.print(matrizAdy[i][j] + "\t");
             }
             //Nueva linea para una nueva fila
@@ -135,7 +130,7 @@ public class GrafoMatriz {
             // w es siempre igual al vertice fuente al inicio de la iteracion 
             int w = distanciaMinima(distancias, conjuntoS);
 
-            // Marcar el vertice elejido como visitado 
+            // Marcar el vertice elegido como visitado 
             conjuntoS[w] = true;
 
             // Actualiza el valor de la distacia de los vértices adyacentes del vértice seleccionado
@@ -155,7 +150,7 @@ public class GrafoMatriz {
         }
         //guardar los vertices previos de cada vertice en la variable global
         saltoPrev = previo;
-        // imprimir la tabla de routeo
+        // imprimir la tabla de ruteo
         this.imprimirTablaRuteo(distancias, previo);
 
     }
