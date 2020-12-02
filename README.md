@@ -9,7 +9,7 @@ Fernando Candela Maldonado 20171937
 
 Para abrir el proyecto utilizamos el IDE NetBeans con Java v8, existen dos formas de obtener el proyecto, el primero con la opción clonar del NetBeans, para ello ingresar al NetBeans en la barra de herramientas dirigirse a la ruta "Team/Git/Clone" al abrir se tiene ingresar la URL del repositorio. La otra opción es descargar el proyecto en un archivo .zip y abrirlo con NetBeans en la ruta "File/OpenProject" y seleccionar la ubicación del archivo descomprimido.
 
-Para ejecutar la aplicación dirigirse a la clase “main”, darle click derecho y darle a la opción “Run File”.
+Para ejecutar la aplicación dirigirse a la clase “main”, darle click derecho y seleccionar a la opción “Run File”.
 
 ### Explicación del contenido del Proyecto 
 
@@ -33,7 +33,7 @@ El primero llamado "GrafoMatriz" el cual contiene toda la lógica del programa y
   
     "Nombre de la topología".mostrarGrafo();
     
-  -Para ejecutar el algoritmo de Dijkstra y mostrar la tabla de ruteo\n
+  -Para ejecutar el algoritmo de Dijkstra y mostrar la tabla de ruteo
   
     "Nombre de la topología".dijkstra("Vértice Fuente");
     
